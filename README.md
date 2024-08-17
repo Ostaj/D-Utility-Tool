@@ -2,6 +2,10 @@
 
 **D-Utility Tool** is an all-in-one platform that provides direct links to a variety of online tools. With this tool, you can access your favorite tools quickly and easily through a single interface.
 
+## Preview this File without downloading:
+https://raw.githack.com/Ostaj/D-Utility-Tool/main/D-Utility%20Tool/index.html
+
+
 ## Features
 
 - **Direct Links:** Access various online tools with one-click links.
