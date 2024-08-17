@@ -1,0 +1,257 @@
+/* Set basic styles for the body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(45deg, rgb(74, 201, 251), rgb(230, 242, 244), rgb(102, 252, 182));
+    background-size: 300% 300%;
+    animation: gradientAnimation 30s ease infinite;
+    min-height: 100vh; /* Ensure body is at least as tall as the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Styles for the header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main content styles */
+main {
+    padding: 80px 20px 20px; /* Padding to ensure content is visible below header */
+    flex: 1;
+}
+
+/* Introduction section styles */
+.intro-container {
+    text-align: center;
+    margin-bottom: 30px; /* Space between message and boxes */
+}
+
+.info-message {
+    font-size: 0.9em; /* Smaller font size */
+    color: #333;
+    margin: 0;
+}
+
+.highlight {
+    color: red; /* Highlight the phrase in red */
+}
+
+.info-line {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 10px auto;
+    width: 50%; /* Adjust width of the line */
+}
+
+/* Boxes container styling */
+.boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Gap between boxes */
+    justify-content: center;
+}
+
+/* Box styling */
+.box {
+    background: rgba(255, 255, 255, 0.2); /* Translucent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px;
+    text-align: center;
+    width: calc(25% - 20px); /* 4 boxes per row minus gap */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Glass-like blur effect */
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Box icon styling */
+.box-icon {
+    max-width: 100%; /* Scale down image to fit within the box */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60px; /* Set a maximum height for the icon */
+    margin-bottom: 10px;
+}
+
+/* Box content styling */
+.box-content p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Link styling within boxes */
+.box-link {
+    color: inherit; /* Inherit color from the parent box */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* FAQ section styles */
+.faq-container {
+    max-width: 100%;
+    padding: 0 10px; /* Reduced padding for smaller screens */
+    margin: 0 auto;
+}
+
+/* FAQ header styles */
+.faq-header {
+    margin-bottom: 20px;
+}
+
+.faq-heading {
+    font-size: 1.55em; /* Slightly larger font for the FAQ heading */
+    color: #333;
+}
+
+/* Accordion styles */
+.faq-accordion {
+    margin: 0;
+    padding: 0;
+}
+
+/* Align FAQ items to the left */
+.faq-item {
+    border-top: 1px solid #ddd; /* Thin light border between questions */
+}
+
+.faq-question {
+    background: rgba(255, 255, 255, 0.6); /* Transparent background */
+    border: none;
+    padding: 15px; /* Increased padding */
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.4em; /* Adjusted font size for questions */
+    cursor: pointer;
+    position: relative;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    max-height: 0; /* Initially hide answers */
+    overflow: hidden; /* Hide overflow */
+    padding: 0 15px; /* Remove padding to start */
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque background for the answer */
+    font-size: 1.3em; /* Increased font size for answers */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth transition */
+}
+
+/* Expanded state for answers */
+.faq-item.active .faq-answer {
+    max-height: 1000px; /* Arbitrary large value to ensure full expansion */
+    padding: 15px; /* Restore padding when expanded */
+}
+
+/* Style for arrow indicator */
+.arrow {
+    width: 12px; /* Slightly larger arrow */
+    height: 12px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+/* Ensure FAQ container is responsive */
+@media (max-width: 768px) {
+    .faq-heading {
+        font-size: 1.4em;
+    }
+
+    .faq-question {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+
+    .faq-answer {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+
+    .box {
+        width: calc(50% - 10px); /* 2 boxes per row minus gap */
+    }
+}
+
+/* Media query for very small screens (e.g., phones) */
+@media (max-width: 480px) {
+    .faq-heading {
+        font-size: 1.2em;
+    }
+
+    .faq-question {
+        font-size: 1.1em;
+        padding: 10px;
+    }
+
+    .faq-answer {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .box {
+        width: calc(100% - 20px); /* 1 box per row */
+    }
+}
+
+.end_lines {
+    font-size: 0.8em; /* Smaller font size */
+    color: #fb7a8b;      /* Subtle gray color for text */
+    text-align: left; /* left align the text */
+    margin-top: 20px; /* Space above the section */
+    padding: 10px; /* Padding around the text */
+   
+}
+
+.end_lines p {
+    margin: 0;              /* Remove default margin */
+    padding: 0;             /* Remove default padding */
+    line-height: 1.2;       /* Adjust line height for better readability */
+}
+
+
+/* Style for email links */
+.email-link {
+    color: rgb(25, 142, 244); /* Blue color for email links */
+    text-decoration: underline; /* Underline email links */
+}
+
+/* Optional: Change link color on hover */
+.email-link:hover {
+    color: rgb(249, 13, 60); /* Darker blue when hovered */
+    text-decoration: underline; /* Ensure underline stays on hover */
+}
