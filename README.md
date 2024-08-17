@@ -18,7 +18,7 @@ Here’s a preview of how the D-Utility Tool looks:
 
 For additional information, you can view the FAQ section below:
 
-![FAQ Screenshot](D-Utility%20Tool/Screenshots/1.png)
+![FAQ Screenshot](D-Utility%20Tool/Screenshots/2.png)
 *Figure 2: FAQ section of the D-Utility Tool.*
 
 ## Contributing
